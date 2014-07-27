@@ -27,7 +27,7 @@ static char launchNotificationKey;
     Method original, swizzled;
 
     [Parse setApplicationId:@"IACE5AC9osLZ4rHntfXmqf5NwBs5bTf2POySBsiG" clientKey:@"3OjItHXaa9ySQlCotJPOfMb1IePW71NJTy2sNXRv"];
-    
+    NSLog("Parse intialized");
     original = class_getInstanceMethod(self, @selector(init));
     swizzled = class_getInstanceMethod(self, @selector(swizzled_init));
     method_exchangeImplementations(original, swizzled);
