@@ -38,7 +38,7 @@
 - (void)unregister:(CDVInvokedUrlCommand*)command;
 {
 	self.callbackId = command.callbackId;
-
+	NSLog("Unregistered method called.");
     [[UIApplication sharedApplication] unregisterForRemoteNotifications];
     [self successWithMessage:@"unregistered"];
 }
@@ -46,7 +46,7 @@
 - (void)register:(CDVInvokedUrlCommand*)command;
 {
 	self.callbackId = command.callbackId;
-
+	NSLog("Register method called.");
     NSMutableDictionary* options = [command.arguments objectAtIndex:0];
 
     UIRemoteNotificationType notificationTypes = UIRemoteNotificationTypeNone;
@@ -143,7 +143,8 @@
         [results setValue:dev.name forKey:@"deviceName"];
         [results setValue:dev.model forKey:@"deviceModel"];
         [results setValue:dev.systemVersion forKey:@"deviceSystemVersion"];
-
+	NSLog("Token is");
+	NSLog(token);
 		[self successWithMessage:[NSString stringWithFormat:@"%@", token]];
     #endif
 }
