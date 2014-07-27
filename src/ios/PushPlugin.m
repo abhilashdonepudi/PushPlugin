@@ -38,7 +38,9 @@
 - (void)unregister:(CDVInvokedUrlCommand*)command;
 {
 	self.callbackId = command.callbackId;
-	NSLog("unregistered method called.");
+	NSString *string = @"unregistered method called%@";
+	NSLog(string);
+
     [[UIApplication sharedApplication] unregisterForRemoteNotifications];
     [self successWithMessage:@"unregistered"];
 }
@@ -46,8 +48,9 @@
 - (void)register:(CDVInvokedUrlCommand*)command;
 {
 	self.callbackId = command.callbackId;
+	NSString *string = @"register method called.%@";
+	NSLog(string);
 
-	NSLog("registere method called.");
     NSMutableDictionary* options = [command.arguments objectAtIndex:0];
 
     UIRemoteNotificationType notificationTypes = UIRemoteNotificationTypeNone;
@@ -85,7 +88,7 @@
         NSLog(@"PushPlugin.register: Push notification type is set to none");
 
     isInline = NO;
-	NSLog("Calling registerForRemoteNotificationTypes");
+	NSLog(@"Calling registerForRemoteNotificationTypes");
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
 	
 	if (notificationMessage)			// if there is a pending startup notification
@@ -144,13 +147,14 @@
         [results setValue:dev.name forKey:@"deviceName"];
         [results setValue:dev.model forKey:@"deviceModel"];
         [results setValue:dev.systemVersion forKey:@"deviceSystemVersion"];
-
+	NSLog(token);
 		[self successWithMessage:[NSString stringWithFormat:@"%@", token]];
     #endif
 }
 
 - (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
+	NSLog(@"Notification failed");
 	[self failWithMessage:@"" withError:error];
 }
 
