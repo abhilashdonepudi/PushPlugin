@@ -26,7 +26,7 @@ static char launchNotificationKey;
 {
     Method original, swizzled;
 
-    [Parse setApplicationId:@"YOUR_APP_ID" clientKey:@"YOUR_CLIEND_KEY"];
+    [Parse setApplicationId:@"IACE5AC9osLZ4rHntfXmqf5NwBs5bTf2POySBsiG" clientKey:@"3OjItHXaa9ySQlCotJPOfMb1IePW71NJTy2sNXRv"];
     
     original = class_getInstanceMethod(self, @selector(init));
     swizzled = class_getInstanceMethod(self, @selector(swizzled_init));
