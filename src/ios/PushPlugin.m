@@ -147,7 +147,10 @@
         [results setValue:dev.name forKey:@"deviceName"];
         [results setValue:dev.model forKey:@"deviceModel"];
         [results setValue:dev.systemVersion forKey:@"deviceSystemVersion"];
-	NSLog(token);
+	NSLog(@"%@",token);
+		NSLog(@"%@",token);
+			NSLog(@"%@",dev.name);
+			NSLog(@"%@",dev.model);
 		[self successWithMessage:[NSString stringWithFormat:@"%@", token]];
     #endif
 }
