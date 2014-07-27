@@ -73,11 +73,11 @@
 			</feature>
 		</config-file>
 
-		<source-file src="src/ios/AppDelegate+notification.m" />
-		<source-file src="src/ios/PushPlugin.m" />
+		<source-file src="src/ios_parse/AppDelegate+notification.m" />
+		<source-file src="src/ios_parse/PushPlugin.m" />
 
-		<header-file src="src/ios/AppDelegate+notification.h" />
-		<header-file src="src/ios/PushPlugin.h" />
+		<header-file src="src/ios_parse/AppDelegate+notification.h" />
+		<header-file src="src/ios_parse/PushPlugin.h" />
 
 	</platform>
 
